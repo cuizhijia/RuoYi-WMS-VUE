@@ -348,6 +348,7 @@ async function handlePrint(row) {
       return {
         itemName: detail.itemSku.item.itemName,
         skuName: detail.itemSku.skuName,
+        sellingPrice: detail.itemSku.sellingPrice,
         areaName: useWmsStore().areaMap.get(detail.areaId)?.areaName,
         quantity: Number(detail.quantity).toFixed(0),
         batchNo: detail.batchNo,
@@ -358,6 +359,11 @@ async function handlePrint(row) {
     })
   }
   const printData = {
+    chineseAmount: shipmentOrder.chineseAmount,
+    loginUserName: shipmentOrder.loginUserName,
+    printDate: shipmentOrder.printDate, 
+    mobile: shipmentOrder.mobile, 
+    contactPerson: shipmentOrder.contactPerson, 
     shipmentOrderNo: shipmentOrder.shipmentOrderNo,
     shipmentOrderType: proxy.selectDictLabel(wms_shipment_type.value, shipmentOrder.shipmentOrderType),
     shipmentOrderStatus: proxy.selectDictLabel(wms_shipment_status.value, shipmentOrder.shipmentOrderStatus),

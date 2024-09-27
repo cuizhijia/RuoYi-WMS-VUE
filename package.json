@@ -1,5 +1,5 @@
 {
-  "name": "ruoyi-wms",
+  "name": "wms",
   "version": "4.8.2",
   "description": "ruoyi-wms后台管理系统",
   "author": "ZCC",
@@ -31,7 +31,8 @@
     "vue": "3.2.45",
     "vue-cropper": "1.0.3",
     "vue-plugin-hiprint": "^0.0.56",
-    "vue-router": "4.1.4"
+    "vue-router": "4.1.4",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "3.1.0",

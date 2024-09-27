@@ -45,7 +45,7 @@
             plain
             icon="Plus"
             @click="handleAdd"
-            v-hasPermi="['wms:merchant:add']"
+            
           >新增</el-button>
         </el-col>
       </el-row>
@@ -64,8 +64,8 @@
         <el-table-column label="备注" prop="remark" />
         <el-table-column label="操作" align="right" class-name="small-padding fixed-width">
             <template #default="scope">
-                <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['wms:merchant:edit']">修改</el-button>
-                <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['wms:merchant:remove']">删除</el-button>
+                <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" >修改</el-button>
+                <el-button link type="primary" icon="Delete" @click="handleDelete(scope.row)" >删除</el-button>
             </template>
         </el-table-column>
       </el-table>

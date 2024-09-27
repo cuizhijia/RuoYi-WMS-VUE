@@ -36,6 +36,7 @@ const realSrc = computed(() => {
     return;
   }
   let real_src = props.src.split(",")[0];
+  console.log(real_src);
   return real_src;
 });
 

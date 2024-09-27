@@ -102,10 +102,14 @@ watch(() => props.modelValue, async val => {
     fileList.value = list.map(item => {
       // 字符串回显处理 如果此处存的是url可直接回显 如果存的是id需要调用接口查出来
       if (typeof item === "string") {
-        item = { name: item, url: item };
+        const rewriteUrl = item.replace("127.0.0.1:9000/wms", "www.liangbaokun.cn/image")
+            .replace("192.168.52.100:9000/wms", "www.liangbaokun.cn/image");
+        item = { name: item, url: rewriteUrl };
       } else {
         // 此处name使用ossId 防止删除出现重名
-        item = { name: item.ossId, url: item.url, ossId: item.ossId };
+        const rewriteUrl = item.url.replace("127.0.0.1:9000/wms", "www.liangbaokun.cn/image")
+            .replace("192.168.52.100:9000/wms", "www.liangbaokun.cn/image");
+        item = { name: item.ossId, url: rewriteUrl, ossId: item.ossId };
       }
       return item;
     });
